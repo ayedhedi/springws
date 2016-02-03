@@ -15,7 +15,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		 <skipTests>true</skipTests>
+		<skipTests>false</skipTests>
 	</properties>
 
 
@@ -24,33 +24,47 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-ws</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>wsdl4j</groupId>
 			<artifactId>wsdl4j</artifactId>
 		</dependency>
-
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
-
-
-	</dependencies>
-
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.databene</groupId>
+            <artifactId>feed4junit</artifactId>
+            <version>1.2.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.tempus-fugit</groupId>
+            <artifactId>tempus-fugit</artifactId>
+            <version>1.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 	<build>
-	<finalName>SpringWs</finalName>
+		<finalName>SpringWs</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -72,7 +86,7 @@
 				<configuration>
 					<schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory>
 					<outputDirectory>${project.basedir}/src/main/java</outputDirectory>
-					<packageName>lu.sfeir.ayed.springws.domain</packageName>
+					<packageName>lu.sfeir.ayed.springws.ConfigurationsTests.soap</packageName>
 					<clearOutputDir>false</clearOutputDir>
 				</configuration>
 			</plugin>

@@ -17,14 +17,66 @@
         </xs:complexType>
     </xs:element>
 
+	<xs:element name="addCountryRequest">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="country" type="sf:country" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="addCountryResponse">
+		<xs:complexType>
+            <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+	</xs:element>
+
     <xs:complexType name="country">
         <xs:sequence>
+            <xs:element name="code" type="sf:countryCode"/>
             <xs:element name="name" type="xs:string"/>
-            <xs:element name="population" type="xs:int"/>
-            <xs:element name="capital" type="xs:string"/>
-            <xs:element name="currency" type="sf:currency"/>
+            <xs:element name="continent" type="sf:continent"/>
+            <xs:element name="region" type="xs:string"/>
+            <xs:element name="surfaceArea" type="xs:float"/>
+            <xs:element name="indepYear" type="xs:gYear" minOccurs="0" />
+            <xs:element name="population" type="xs:int" />
+            <xs:element name="lifeExpectancy" type="xs:float"  minOccurs="0"/>
+            <xs:element name="gnp" type="xs:float"  minOccurs="0"/>
+            <xs:element name="gnpOld" type="xs:float"  minOccurs="0"/>
+            <xs:element name="localName" type="xs:string" />
+            <xs:element name="governmentForm" type="xs:string" />
+            <xs:element name="headOfState" type="xs:string"  minOccurs="0" />
+            <xs:element name="capital" type="xs:string"  minOccurs="0" />
+            <xs:element name="code2" type="xs:string" />
+            <xs:element name="languages" type="sf:language" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+    
+    <xs:complexType name="language">
+    	<xs:attribute name="name" type="xs:string" />
+    	<xs:attribute name="official" type="xs:boolean" />
+    	<xs:attribute name="percentage" type="xs:float" />
+    </xs:complexType>
+    
+    <xs:simpleType name="countryCode">
+    	 <xs:restriction base="xs:string">
+    	 	<xs:length value="3"></xs:length>
+    	 </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="continent">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ASIA"/>
+            <xs:enumeration value="EUROPE"/>
+            <xs:enumeration value="NORTH_AMERICA"/>
+            <xs:enumeration value="AFRICA"/>
+            <xs:enumeration value="OCEANIA"/>
+            <xs:enumeration value="ANTARCTICA"/>
+            <xs:enumeration value="SOUTH_AMERICA"/>
+        </xs:restriction>
+    </xs:simpleType>
 
     <xs:simpleType name="currency">
         <xs:restriction base="xs:string">
@@ -33,4 +85,5 @@
             <xs:enumeration value="PLN"/>
         </xs:restriction>
     </xs:simpleType>
+  
 </xs:schema>

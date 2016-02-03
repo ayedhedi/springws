@@ -1,144 +1,142 @@
-//
-// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.2.7 
-// Voir <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2016.02.01 à 01:55:12 PM CET 
-//
-
-
 package lu.sfeir.ayed.springws.domain;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-
-/**
- * <p>Classe Java pour country complex type.
- * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
- * <pre>
- * &lt;complexType name="country">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="population" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="capital" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="currency" type="{http://sfeir.lu/guides/gs-producing-web-service}currency"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "country", propOrder = {
-    "name",
-    "population",
-    "capital",
-    "currency"
-})
+@Entity
+@Table(name="country")
 public class Country {
 
-    @XmlElement(required = true)
-    protected String name;
-    protected int population;
-    @XmlElement(required = true)
-    protected String capital;
-    @XmlElement(required = true)
-    protected Currency currency;
-
-    /**
-     * Obtient la valeur de la propriété name.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getName() {
-        return name;
+	@Id
+	@Column(name="Code")
+	private String code;
+	@Column(name="Name", nullable=false)
+	private String name;
+	@Column(name="Region", nullable=false)
+	private String region;
+	@Column(name="SurfaceArea", nullable=false)
+	private float surface;
+	@Column(name="Continent", nullable=false)
+	private String continent;
+	@Column(name="IndepYear", nullable=true)
+	private int indepYear;
+	@Column(name="Population", nullable=false)
+	private int population;
+	@Column(name="LifeExpectancy", nullable=true)
+	private float lifeExpectancy;
+	@Column(name="GNP", nullable=true)
+	private float gnp;
+	@Column(name="GNPOld", nullable=true)
+	private float gnpOld;
+	@Column(name="LocalName", nullable=false)
+	private String localName;
+	@Column(name="GovernmentForm", nullable=false)
+	private String governmentForm;
+	@Column(name="HeadOfState", nullable=true)
+	private String headOfState;
+	@Column(name="Capital", nullable=true)
+	private int cityId;
+	@Column(name="Code2", nullable=false)
+	private String code2;
+	
+	
+	
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getRegion() {
+		return region;
+	}
+	public void setRegion(String region) {
+		this.region = region;
+	}
+	public float getSurface() {
+		return surface;
+	}
+	public void setSurface(float surface) {
+		this.surface = surface;
+	}
+    public String getContinent() {
+        return continent;
     }
-
-    /**
-     * Définit la valeur de la propriété name.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
+    public void setContinent(String continent) {
+        this.continent = continent;
     }
-
-    /**
-     * Obtient la valeur de la propriété population.
-     * 
-     */
-    public int getPopulation() {
-        return population;
-    }
-
-    /**
-     * Définit la valeur de la propriété population.
-     * 
-     */
-    public void setPopulation(int value) {
-        this.population = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété capital.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCapital() {
-        return capital;
-    }
-
-    /**
-     * Définit la valeur de la propriété capital.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCapital(String value) {
-        this.capital = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété currency.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Currency }
-     *     
-     */
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    /**
-     * Définit la valeur de la propriété currency.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Currency }
-     *     
-     */
-    public void setCurrency(Currency value) {
-        this.currency = value;
-    }
-
+    public int getIndepYear() {
+		return indepYear;
+	}
+	public void setIndepYear(int indepYear) {
+		this.indepYear = indepYear;
+	}
+	public int getPopulation() {
+		return population;
+	}
+	public void setPopulation(int population) {
+		this.population = population;
+	}
+	public float getLifeExpectancy() {
+		return lifeExpectancy;
+	}
+	public void setLifeExpectancy(float lifeExpectancy) {
+		this.lifeExpectancy = lifeExpectancy;
+	}
+	public float getGnp() {
+		return gnp;
+	}
+	public void setGnp(float gnp) {
+		this.gnp = gnp;
+	}
+	public float getGnpOld() {
+		return gnpOld;
+	}
+	public void setGnpOld(float gnpOld) {
+		this.gnpOld = gnpOld;
+	}
+	public String getLocalName() {
+		return localName;
+	}
+	public void setLocalName(String localName) {
+		this.localName = localName;
+	}
+	public String getGovernmentForm() {
+		return governmentForm;
+	}
+	public void setGovernmentForm(String governmentForm) {
+		this.governmentForm = governmentForm;
+	}
+	public String getHeadOfState() {
+		return headOfState;
+	}
+	public void setHeadOfState(String headOfState) {
+		this.headOfState = headOfState;
+	}
+	public int getCityId() {
+		return cityId;
+	}
+	public void setCityId(int cityId) {
+		this.cityId = cityId;
+	}
+	public String getCode2() {
+		return code2;
+	}
+	public void setCode2(String code2) {
+		this.code2 = code2;
+	}
+	
+	
+	
+	
 }

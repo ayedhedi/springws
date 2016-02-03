@@ -2,11 +2,11 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.2.7 
 // Voir <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2016.02.01 à 01:55:12 PM CET 
+// Généré le : 2016.02.03 à 04:41:34 PM CET 
 //
 
 
-package lu.sfeir.ayed.springws.domain;
+package lu.sfeir.ayed.springws.ConfigurationsTests.soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

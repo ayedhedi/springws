@@ -2,11 +2,11 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.2.7 
 // Voir <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2016.02.01 à 01:55:12 PM CET 
+// Généré le : 2016.02.02 à 04:20:19 PM CET 
 //
 
 
-package lu.sfeir.ayed.springws.domain;
+package lu.sfeir.ayed.springws.soap;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the lu.sfeir.ayed.springws.domain package. 
+ * generated in the lu.sfeir.ayed.springws.soap package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,18 +30,26 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: lu.sfeir.ayed.springws.domain
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: lu.sfeir.ayed.springws.soap
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link GetCountryRequest }
+     * Create an instance of {@link AddCountryRequest }
      * 
      */
-    public GetCountryRequest createGetCountryRequest() {
-        return new GetCountryRequest();
+    public AddCountryRequest createAddCountryRequest() {
+        return new AddCountryRequest();
+    }
+
+    /**
+     * Create an instance of {@link Country }
+     * 
+     */
+    public Country createCountry() {
+        return new Country();
     }
 
     /**
@@ -53,11 +61,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Country }
+     * Create an instance of {@link AddCountryResponse }
      * 
      */
-    public Country createCountry() {
-        return new Country();
+    public AddCountryResponse createAddCountryResponse() {
+        return new AddCountryResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCountryRequest }
+     * 
+     */
+    public GetCountryRequest createGetCountryRequest() {
+        return new GetCountryRequest();
+    }
+
+    /**
+     * Create an instance of {@link Language }
+     * 
+     */
+    public Language createLanguage() {
+        return new Language();
     }
 
 }
