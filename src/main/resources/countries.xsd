@@ -62,7 +62,7 @@
     
     <xs:simpleType name="countryCode">
     	 <xs:restriction base="xs:string">
-    	 	<xs:length value="3"></xs:length>
+    	 	<xs:length value="3"/>
     	 </xs:restriction>
     </xs:simpleType>
     

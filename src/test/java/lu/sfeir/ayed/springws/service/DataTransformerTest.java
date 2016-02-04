@@ -42,8 +42,8 @@ public class DataTransformerTest {
         dataTransformer.setCityRepository(cityRepository);
     }
 
+
     @Test
-    @Equivalence
     @Source(id = "mysqlLocal", selector = "SELECT Code, Name, Continent, Region, GovernmentForm, Population, Code2, " +
             "LocalName, Capital From country ORDER BY RAND() LIMIT 1")
     public void shouldTransformExistCountryFromDB(String code, String name,String continent,String region

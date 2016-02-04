@@ -28,24 +28,40 @@ public class DataTransformer {
 		Assert.notNull(country);
 		
 		lu.sfeir.ayed.springws.soap.Country  c = new lu.sfeir.ayed.springws.soap.Country();
+        //set non nullable values
 		c.setCode(country.getCode());
         c.setName(country.getName());
 		c.setContinent(transformContinent(country.getContinent()));
 		c.setRegion(country.getRegion());
 		c.setSurfaceArea(country.getSurface());
-		c.setIndepYear(transformIndepYear(country.getIndepYear()));
 		c.setPopulation(country.getPopulation());
-		c.setLifeExpectancy(country.getLifeExpectancy());
-		c.setGnp(country.getGnp());
-		c.setGnpOld(country.getGnpOld());
 		c.setLocalName(country.getLocalName());
 		c.setGovernmentForm(country.getGovernmentForm());
-		c.setHeadOfState(country.getHeadOfState());
-		c.setCode2(country.getCode2());
-		City capital = cityRepository.findOne(country.getCityId());
-		if (capital != null) {
-			c.setCapital(capital.getName());
-		}
+        c.setCode2(country.getCode2());
+
+        //set possible nullable values
+        if (country.getIndepYear()!=null) {
+            c.setIndepYear(transformIndepYear(country.getIndepYear()));
+        }
+        if (country.getLifeExpectancy()!=null) {
+            c.setLifeExpectancy(country.getLifeExpectancy());
+        }
+        if (country.getGnp()!=null){
+            c.setGnp(country.getGnp());
+        }
+        if (country.getGnpOld()!=null) {
+            c.setGnpOld(country.getGnpOld());
+        }
+        if (country.getHeadOfState()!=null) {
+            c.setHeadOfState(country.getHeadOfState());
+        }
+        if (country.getCityId()!=null) {
+            City capital = cityRepository.findOne(country.getCityId());
+            if (capital != null) {
+                c.setCapital(capital.getName());
+            }
+        }
+
 		return c;
 	}
 	

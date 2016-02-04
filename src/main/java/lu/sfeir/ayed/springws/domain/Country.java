@@ -23,15 +23,15 @@ public class Country {
 	@Column(name="Continent", nullable=false)
 	private String continent;
 	@Column(name="IndepYear", nullable=true)
-	private int indepYear;
+	private Integer indepYear;
 	@Column(name="Population", nullable=false)
 	private int population;
 	@Column(name="LifeExpectancy", nullable=true)
-	private float lifeExpectancy;
+	private Float lifeExpectancy;
 	@Column(name="GNP", nullable=true)
-	private float gnp;
+	private Float gnp;
 	@Column(name="GNPOld", nullable=true)
-	private float gnpOld;
+	private Float gnpOld;
 	@Column(name="LocalName", nullable=false)
 	private String localName;
 	@Column(name="GovernmentForm", nullable=false)
@@ -39,104 +39,127 @@ public class Country {
 	@Column(name="HeadOfState", nullable=true)
 	private String headOfState;
 	@Column(name="Capital", nullable=true)
-	private int cityId;
+	private Integer cityId;
 	@Column(name="Code2", nullable=false)
 	private String code2;
-	
-	
-	
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getRegion() {
-		return region;
-	}
-	public void setRegion(String region) {
-		this.region = region;
-	}
-	public float getSurface() {
-		return surface;
-	}
-	public void setSurface(float surface) {
-		this.surface = surface;
-	}
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public float getSurface() {
+        return surface;
+    }
+
+    public void setSurface(float surface) {
+        this.surface = surface;
+    }
+
     public String getContinent() {
         return continent;
     }
+
     public void setContinent(String continent) {
         this.continent = continent;
     }
-    public int getIndepYear() {
-		return indepYear;
-	}
-	public void setIndepYear(int indepYear) {
-		this.indepYear = indepYear;
-	}
-	public int getPopulation() {
-		return population;
-	}
-	public void setPopulation(int population) {
-		this.population = population;
-	}
-	public float getLifeExpectancy() {
-		return lifeExpectancy;
-	}
-	public void setLifeExpectancy(float lifeExpectancy) {
-		this.lifeExpectancy = lifeExpectancy;
-	}
-	public float getGnp() {
-		return gnp;
-	}
-	public void setGnp(float gnp) {
-		this.gnp = gnp;
-	}
-	public float getGnpOld() {
-		return gnpOld;
-	}
-	public void setGnpOld(float gnpOld) {
-		this.gnpOld = gnpOld;
-	}
-	public String getLocalName() {
-		return localName;
-	}
-	public void setLocalName(String localName) {
-		this.localName = localName;
-	}
-	public String getGovernmentForm() {
-		return governmentForm;
-	}
-	public void setGovernmentForm(String governmentForm) {
-		this.governmentForm = governmentForm;
-	}
-	public String getHeadOfState() {
-		return headOfState;
-	}
-	public void setHeadOfState(String headOfState) {
-		this.headOfState = headOfState;
-	}
-	public int getCityId() {
-		return cityId;
-	}
-	public void setCityId(int cityId) {
-		this.cityId = cityId;
-	}
-	public String getCode2() {
-		return code2;
-	}
-	public void setCode2(String code2) {
-		this.code2 = code2;
-	}
-	
-	
-	
-	
+
+    public Integer getIndepYear() {
+        return indepYear;
+    }
+
+    public void setIndepYear(Integer indepYear) {
+        this.indepYear = indepYear;
+    }
+
+    public int getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(int population) {
+        this.population = population;
+    }
+
+    public Float getLifeExpectancy() {
+        return lifeExpectancy;
+    }
+
+    public void setLifeExpectancy(Float lifeExpectancy) {
+        this.lifeExpectancy = lifeExpectancy;
+    }
+
+    public Float getGnp() {
+        return gnp;
+    }
+
+    public void setGnp(Float gnp) {
+        this.gnp = gnp;
+    }
+
+    public Float getGnpOld() {
+        return gnpOld;
+    }
+
+    public void setGnpOld(Float gnpOld) {
+        this.gnpOld = gnpOld;
+    }
+
+    public String getLocalName() {
+        return localName;
+    }
+
+    public void setLocalName(String localName) {
+        this.localName = localName;
+    }
+
+    public String getGovernmentForm() {
+        return governmentForm;
+    }
+
+    public void setGovernmentForm(String governmentForm) {
+        this.governmentForm = governmentForm;
+    }
+
+    public String getHeadOfState() {
+        return headOfState;
+    }
+
+    public void setHeadOfState(String headOfState) {
+        this.headOfState = headOfState;
+    }
+
+    public Integer getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(Integer cityId) {
+        this.cityId = cityId;
+    }
+
+    public String getCode2() {
+        return code2;
+    }
+
+    public void setCode2(String code2) {
+        this.code2 = code2;
+    }
 }
