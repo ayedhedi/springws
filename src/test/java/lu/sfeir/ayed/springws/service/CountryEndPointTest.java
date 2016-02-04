@@ -1,6 +1,7 @@
 package lu.sfeir.ayed.springws.service;
 
 import org.databene.benerator.anno.Database;
+import org.databene.benerator.anno.InvocationCount;
 import org.databene.benerator.anno.Stochastic;
 import org.databene.feed4junit.Feeder;
 import org.junit.FixMethodOrder;
@@ -10,6 +11,8 @@ import org.junit.runners.MethodSorters;
 import org.springframework.util.Assert;
 import org.springframework.xml.transform.StringSource;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.xml.transform.Source;
 
 import static org.springframework.ws.test.server.RequestCreators.withPayload;
@@ -73,6 +76,22 @@ public class CountryEndPointTest extends WebConfigurationsTest{
 
         mockClient.sendRequest
                 (withPayload(getCountryRequest)).andExpect(noFault());
+    }
+
+    @Test
+    @InvocationCount(100)
+    public void test_3_NonExistingCountries(@NotNull @Pattern(regexp = "[\\w]{7,255}") String name) {
+        Source getCountryRequest = new StringSource(
+                "<getCountryRequest xmlns='http://sfeir.lu/guides/gs-producing-web-service'>\n" +
+                        "  <name>"+name+"</name>\n" +
+                        "</getCountryRequest>\n");
+
+        Source getCountryResponse = new StringSource(
+                " <ns2:getCountryResponse xmlns:ns2='http://sfeir.lu/guides/gs-producing-web-service' />"
+        );
+
+        mockClient.sendRequest
+                (withPayload(getCountryRequest)).andExpect(noFault()).andExpect(payload(getCountryResponse));
     }
 
 }
