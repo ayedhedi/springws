@@ -45,6 +45,10 @@ public class DatabaseConfig {
 		Map<String,String> jpaPropertiesMap = new HashMap<String,String>();
 		jpaPropertiesMap.put("hibernate.dialect",env.getProperty("hibernate.dialect"));
 		jpaPropertiesMap.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
+        jpaPropertiesMap.put("hibernate.generate_statistics", "true");
+        jpaPropertiesMap.put("hibernate.show_sql", "true");
+        jpaPropertiesMap.put("hibernate.format_sql", "true");
+        jpaPropertiesMap.put("hibernate.use_sql_comments", "true");
 		return jpaPropertiesMap;
 	}
 

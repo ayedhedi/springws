@@ -94,4 +94,18 @@ public class CountryEndPointTest extends WebConfigurationsTest{
                 (withPayload(getCountryRequest)).andExpect(noFault()).andExpect(payload(getCountryResponse));
     }
 
+    @Test
+    public void test_4_EmptyRequestContent(){
+        Source getCountryRequest = new StringSource(
+                "<getCountryRequest xmlns='http://sfeir.lu/guides/gs-producing-web-service'>\n" +
+                        "</getCountryRequest>\n");
+
+        Source getCountryResponse = new StringSource(
+                " <ns2:getCountryResponse xmlns:ns2='http://sfeir.lu/guides/gs-producing-web-service' />"
+        );
+
+        mockClient.sendRequest
+                (withPayload(getCountryRequest)).andExpect(noFault()).andExpect(payload(getCountryResponse));
+    }
+
 }
